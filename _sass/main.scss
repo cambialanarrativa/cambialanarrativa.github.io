@@ -1,0 +1,276 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: "Teko", sans-serif;
+}
+
+h1 {
+    font-size: 6em;
+}
+
+a {
+    color: #005eb8;
+    text-decoration: none;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.site-header {
+    border-top: 0.5em solid #005eb8;
+    border-bottom: 0.5em solid #005eb8;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-family: "Teko", sans-serif;
+    
+    padding: 1.5em 1em 1.5em 1em;
+    margin: 0 auto;
+    margin-top: 4em;
+    margin-bottom: 3em; 
+    width: 80%;
+}
+
+.site-title {
+    color: #f93822;
+    font-size: 6em;
+    font-weight: 600;
+    line-height: 1em;
+
+    .title-hashtag {
+        font-size: 2.6em;
+        font-weight: 500;
+    }
+}
+
+nav {
+    font-size: 2em;
+    line-height: 1.4em;
+    padding-top: 0em;
+    height: calc(100% - 0.5em);
+    box-sizing: border-box;
+
+    .trigger {
+        border-bottom: 1px solid #005eb8;
+        min-width: 10vw;
+        position: relative;
+
+        :hover {
+            border: 3px solid #fff;
+        }
+
+        ::before, ::after {
+            width: 100%;
+            height:100%;
+            z-index: 3;
+            content:'';
+            position: absolute;
+            top:0;
+            left:0;
+            box-sizing: border-box;
+            -webkit-transform: scale(0);
+            transition: 0.5s;
+        }
+          
+        ::before {
+            border-bottom: 3px solid #f93822;
+            border-left: 3px solid #f93822;
+            -webkit-transform-origin: 0 100%;
+        }
+        
+        ::after {
+            border-top: 3px solid #f93822;
+            border-right: 3px solid #f93822;
+            -webkit-transform-origin: 100% 0%;
+        }
+
+        :hover::after, :hover::before {
+            -webkit-transform: scale(1);
+          }
+
+        .page-link {
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+            display: inline-block;
+            transition: 0.5s;
+            -webkit-transition:0.5s;
+
+            border: 3px solid #fff;
+
+            position:relative;
+            cursor: pointer;
+
+            
+        }
+        
+    }
+
+    .trigger-no-border {
+        min-width: 10vw;
+        position: relative;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+
+    
+}
+
+.nav-columns {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+
+    > div {
+        padding-left: 2em;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+}
+
+.section-main {
+    background-image: url("/assets/img/front.png");
+    background-size: cover;
+    color: white;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+$breakpoint-mini: 600px;
+$breakpoint-phone: 1000px;
+$breakpoint-tablet: 1400px;
+
+@media (max-width: $breakpoint-mini) {
+    .site-title {
+        text-align: left;
+        font-size: 2em;
+        margin: 0 auto;
+    }
+    .site-brand {
+        text-align: center;
+    }
+
+    .site-header {
+        flex-direction: column;
+
+        nav {
+            padding-top: 1em;
+        }
+
+        .nav-columns {
+            flex-direction: column;
+            * {
+                padding-left: 0;
+                text-align: center;
+                font-size: 1em;
+                border: none;
+            }
+        }
+    }
+}
+
+@media (min-width: $breakpoint-phone) and
+       (max-width: $breakpoint-tablet) {
+    .site-title {
+        font-size: 4em;
+    }
+
+    nav {
+        font-size: 1.3em;
+    }
+
+}
+
+@media (min-width: $breakpoint-mini) and 
+       (max-width: $breakpoint-phone) {
+
+    .site-brand {
+        text-align: center;
+    }
+
+    .site-title {
+        text-align: left;
+        font-size: 4em;
+        margin: 0 auto;
+    }
+
+    .site-header {
+        flex-direction: column;
+
+        nav {
+            font-size: 1.5em;
+            padding-top: 2em;
+        }
+
+        .nav-columns {
+            flex-direction: column;
+            * {
+                padding-left: 0;
+                text-align: center;
+                font-size: 1.1em;
+                border: none;
+            }
+        }
+
+        .page-link {
+            padding-top: 0.2em;
+            padding-bottom: 0.2em;
+        }
+    }
+}
