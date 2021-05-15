@@ -29,7 +29,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+    font-family: "Montserrat", sans-serif;
+	line-height: 1.2;
 }
 ol, ul {
 	list-style: none;
@@ -53,6 +54,24 @@ h1, h2, h3, h4, h5 {
 
 h1 {
     font-size: 6em;
+    font-weight: 600;
+    margin-bottom: 1vh;
+}
+
+h2 {
+    font-size: 4em;
+    font-weight: 600;
+    margin-bottom: 1vh;
+}
+
+h3 {
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 1vh;
+}
+
+p {
+    margin-bottom: 2em;
 }
 
 a {
@@ -159,9 +178,10 @@ nav {
         position: relative;
         padding-left: 0.5em;
         padding-right: 0.5em;
+        display: flex;
+        justify-content: space-between;
     }
 
-    
 }
 
 .nav-columns {
@@ -181,6 +201,12 @@ nav {
     }
 }
 
+.wrapper {
+    padding-top: 4em;
+    margin: 0 auto;
+    width: 80%;
+}
+
 .section-main {
     background-image: url("/assets/img/front.png");
     background-size: cover;
@@ -190,6 +216,52 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.svg-icon {
+    height: 1vh;
+    width: 1vw;
+    display: inline;
+    vertical-align: center;
+    font-size: 0;
+}
+
+.svg-icon-header {
+    height: 1vw;
+    width: 1vw;
+    display: inline;
+    font-size: 0;
+    vertical-align: baseline;
+
+    img {
+        fill: #005eb8;
+        transition: 0.2s;
+    }
+}
+
+.social-media-list li {
+    padding-bottom: 1em;
+}
+
+.site-footer {
+    padding-bottom: 4em;
+}
+
+.trigger-no-border a:hover img {
+    fill: #f93822;
+}
+
+.footer-col-wrapper {
+    padding-top: 2em;
+}
+
+.footer-col-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-col {
+    flex: 1;
 }
 
 $breakpoint-mini: 600px;
